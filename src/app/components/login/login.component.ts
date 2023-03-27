@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(data: UserDetails){
-    //console.log(data);
+    console.log(data);
     this.loginService.login(data);
   }
 }
