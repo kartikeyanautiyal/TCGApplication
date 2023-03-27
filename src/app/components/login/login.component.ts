@@ -10,7 +10,7 @@ import { LoginService } from 'src/app/services/login.service';
 })
 export class LoginComponent implements OnInit {
   // user_logged_in: object | undefined;
-  // loginValid: any;
+  loginValid: boolean = false;
   constructor(private router: Router, public loginService: LoginService) {
   }
 
@@ -21,13 +21,20 @@ export class LoginComponent implements OnInit {
     console.log(data);
     this.loginService.login(data);
 
-    if(true){
+    this.loginService.current_status.subscribe(
+      status => {
+        this.loginValid = status;
+        console.log("onsubmit status check ", status);
+      }
+      );
+
+    if(this.loginValid){
       console.log("entered");
       this.router.navigate(['home']);
     }
 
     else{
-      this.loginService.loginValid = false;
+      this.router.navigate(['sign-in']);
     }
   }
 }
