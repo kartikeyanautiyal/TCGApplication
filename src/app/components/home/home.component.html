@@ -1,1 +1,3 @@
-<p>home works!</p>
+<p *ngIf="loginservice.isLoggedIn()">
+    Welcome {{ loginservice.current_user.sub }}
+  </p>

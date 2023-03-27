@@ -9,6 +9,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { JwtHelperService, JwtModule } from '@auth0/angular-jwt';
+import { Router, RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { JwtHelperService, JwtModule } from '@auth0/angular-jwt';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    JwtModule
+    JwtModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
